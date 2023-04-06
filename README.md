@@ -1,10 +1,18 @@
 # change-obs-scene
 
-With just a few lines of code, automate changing your OBS scenes using the `change-obs-scene` package.
+With just a few lines of code, automate changing your OBS scenes using the [@b3nelly/change-obs-scene](https://www.npmjs.com/package/@b3nelly/change-obs-scene?activeTab=readme) npm package.
+
+## Dependancies
+
+- [OBS](https://obsproject.com/)
+- [Node.js](https://nodejs.org/)
+- [NPM](https://www.npmjs.com/)
+- [obs-websocket-js](https://www.npmjs.com/package/obs-websocket-js) for switching scenes in OBS.
+- [dotenv](https://www.npmjs.com/package/dotenv) for setting private evniermentt varibles.
 
 ## Installation
 
-```bash
+```shell
 npm install @b3nelly/change-obs-scene
 ```
 
@@ -12,9 +20,10 @@ npm install @b3nelly/change-obs-scene
 
 **First, launch OBS and enable the WebSocket Server**
 
-- `Tools > WebSocket Server Settings`:
-  - ![obs websocket server settings](https://github.com/b3nelly2/stream/blob/main/assets/obs-websocket-server-settings.png?raw=true)
-  - Don't forget to set your _Server Password_
+`Tools > WebSocket Server Settings`:
+
+- ![obs websocket server settings](https://github.com/b3nelly2/stream/blob/main/assets/obs-websocket-server-settings.png?raw=true)
+- Don't forget to set your _Server Password_
 
 ### CommonJS (cjs) Usage Example
 
@@ -41,7 +50,7 @@ obsSwitchScenes(
 import obsSwitchScenes from "@b3nelly/change-obs-scene/dist/obs-switch-scenes.esm.js";
 
 const obsSkipScenes = [];
-const intervalInSeconds = 10;
+const intervalInSeconds = 30;
 const obsWebSocketServerURL = "ws://localhost:4455";
 const obsWebSocketServerPassword = "your-password-here";
 
@@ -73,7 +82,7 @@ obsSwitchScenes(
 
       require(["obsSwitchScenes"], function (obsSwitchScenes) {
         const obsSkipScenes = [];
-        const intervalInSeconds = 10;
+        const intervalInSeconds = 90;
         const obsWebSocketServerURL = "ws://localhost:4455";
         const obsWebSocketServerPassword = "your-password-here";
 
@@ -92,16 +101,23 @@ obsSwitchScenes(
 
 ## API
 
-`obsSwitchScenes(intervalInSeconds, obsWebSocketServerURL, obsWebSocketServerPassword, obsSkipScenes)`
+```js
+obsSwitchScenes(
+  intervalInSeconds,
+  obsWebSocketServerURL,
+  obsWebSocketServerPassword,
+  obsSkipScenes
+);
+```
 
-- `intervalInSeconds` (number, default: `10`): Number of seconds between each scene switch.
-- `obsWebSocketServerURL` (string, default: 'ws://localhost:4455'): OBS WebSocket Server URL or IP.
-- `obsWebSocketServerPassword` (string, default: undefined): OBS WebSocket Server Password.
-- `obsSkipScenes` (Array<string>, default: []): An array of scene names to skip when switching scenes (scene name must match).
+- `intervalInSeconds` _(number, default: `60`)_: Number of seconds between each scene switch.
+- `obsWebSocketServerURL` _(string, default: 'ws_://localhost:4455'): OBS WebSocket Server URL or IP.
+- `obsWebSocketServerPassword` _(string, default: undefined)_: OBS WebSocket Server Password.
+- `obsSkipScenes` _(Array<string>, default: [])_: An array of scene names to skip when switching scenes (scene name must match).
 
 ## Test
 
-```bash
+```shell
 npm run test
 ```
 
@@ -109,6 +125,4 @@ npm run test
 
 ### MIT
 
-```md
 This `README.md` file provides installation and usage instructions, as well as a brief description of the API for the `change-obs-scene` package. Feel free to modify it as needed.
-```

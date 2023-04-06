@@ -5,7 +5,7 @@ const obs = new OBSWebSocket();
 /**
  * Automatically Switch OBS Scene
  *
- * @param  {number} [intervalInSeconds=90] Number of secs to next scene.
+ * @param  {number} [intervalInSeconds=60] Number of seconds to next scene.
  * @param  {string} [obsWebSocketServerURL='ws://localhost:4455'] OBS WebSocket Server URL or IP.
  * @param  {string} [obsWebSocketServerPassword=undefined] OBS WebSocket Server Password.
  * @param  {array[string]} [array] Add scene/s you would like skip using comma seperated string(scene name must match).
@@ -13,7 +13,7 @@ const obs = new OBSWebSocket();
  */
 
 const obsSwitchScenes = (
-  intervalInSeconds = 90,
+  intervalInSeconds = 60,
   obsWebSocketServerURL = "ws://localhost:4455",
   obsWebSocketServerPassword = undefined,
   obsSkipScenes = []
