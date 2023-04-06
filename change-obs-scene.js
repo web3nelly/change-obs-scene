@@ -14,9 +14,9 @@ const obs = new OBSWebSocket();
 
 const changeScene = (
   intervalInSeconds = 60,
-  obsWebSocketServerURL = "ws://localhost:4455",
+  obsSkipScenes = [],
   obsWebSocketServerPassword = undefined,
-  obsSkipScenes = []
+  obsWebSocketServerURL = "ws://localhost:4455"
 ) => {
   if (
     obsWebSocketServerPassword === null ||
