@@ -1,0 +1,57 @@
+{
+  "name": "@b3nelly/change-obs-scene",
+  "version": "0.1.0",
+  "description": "With just a few lines of code, automate changing your OBS scenes.",
+  "author": "web3nelly",
+  "license": "MIT",
+  "type": "module",
+  "main": "obs-switch-scenes.js",
+  "scripts": {
+    "build": "rollup -c",
+    "test": "node --experimental-modules test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/web3nelly/change-obs-scene.git"
+  },
+  "engines": {
+    "node": ">12.0"
+  },
+  "keywords": [
+    "automation",
+    "streaming",
+    "websocket",
+    "obs",
+    "obs-scene",
+    "obs-scenes",
+    "obs-switch-scene",
+    "obs-websocket-server",
+    "obs-websocket",
+    "obs-websocket-js",
+    "websocket-application",
+    "switch-scenes",
+    "scene-switcher",
+    "automatic-scene-switcher",
+    "node.js"
+  ],
+  "files": [
+    "dist"
+  ],
+  "bugs": {
+    "url": "https://github.com/web3nelly/change-obs-scene/issues"
+  },
+  "homepage": "https://github.com/web3nelly/change-obs-scene#readme",
+  "dependencies": {
+    "obs-websocket-js": "^5.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.4",
+    "@babel/preset-env": "^7.21.4",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.2",
+    "@rollup/plugin-terser": "^0.4.0",
+    "rollup": "^3.20.2"
+  }
+}
