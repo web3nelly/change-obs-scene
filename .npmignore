@@ -5,6 +5,10 @@ coverage/
 rollup.config.js
 package-lock.json
 
+# Ignore version control files
+.git/
+.gitignore
+
 # Ignore OS-related files
 .DS_Store
 Thumbs.db

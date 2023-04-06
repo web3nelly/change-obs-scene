@@ -10,6 +10,12 @@ npm install @b3nelly/change-obs-scene
 
 ## Usage
 
+**First, launch OBS and enable the WebSocket Server**
+
+- `Tools > WebSocket Server Settings`:
+  - ![obs websocket server settings](https://github.com/b3nelly2/stream/blob/main/assets/obs-websocket-server-settings.png?raw=true)
+  - Don't forget to set your _Server Password_
+
 ### CommonJS (cjs) Usage Example
 
 ```js
