@@ -1,14 +1,14 @@
 {
   "name": "@b3nelly/change-obs-scene",
-  "version": "0.1.4",
-  "description": "With just a few lines of code, automate changing your OBS scenes.",
+  "version": "1.0.0",
+  "description": "With just a few lines of code, automate changing your OBS scenes. Happy streaming! 💜",
   "author": "web3nelly",
   "license": "MIT",
   "type": "module",
-  "main": "obs-switch-scenes.js",
+  "main": "change-obs-scene.js",
   "scripts": {
     "build": "rollup -c",
-    "test": "node --experimental-modules test.js"
+    "cli": "node --experimental-modules examples/cli.js"
   },
   "repository": {
     "type": "git",

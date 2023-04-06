@@ -1,4 +1,4 @@
-import obsSwitchScenes from "./dist/obs-switch-scenes.esm.js";
+import changeScene from "@b3nelly/change-obs-scene";
 import readline from "readline";
 
 const obsSkipScenes = [];
@@ -50,7 +50,7 @@ const askPassword = () => {
   obsWebSocketServerPassword = await askPassword();
   rl.close();
 
-  obsSwitchScenes(
+  changeScene(
     intervalInSeconds,
     obsWebSocketServerURL,
     obsWebSocketServerPassword,

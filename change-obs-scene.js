@@ -6,19 +6,25 @@ const obs = new OBSWebSocket();
  * Automatically Switch OBS Scene
  *
  * @param  {number} [intervalInSeconds=60] Number of seconds to next scene.
- * @param  {string} [obsWebSocketServerURL='ws://localhost:4455'] OBS WebSocket Server URL or IP.
- * @param  {string} [obsWebSocketServerPassword=undefined] OBS WebSocket Server Password.
  * @param  {array[string]} [array] Add scene/s you would like skip using comma seperated string(scene name must match).
+ * @param  {string} [obsWebSocketServerPassword=undefined] OBS WebSocket Server Password. NOTE, leave undefined if there is no password set.
+ * @param  {string} [obsWebSocketServerURL='ws://localhost:4455'] OBS WebSocket Server URL or IP.
  * @returns {null}
  */
 
-const obsSwitchScenes = (
+const changeScene = (
   intervalInSeconds = 60,
   obsWebSocketServerURL = "ws://localhost:4455",
   obsWebSocketServerPassword = undefined,
   obsSkipScenes = []
 ) => {
-  let currentSceneIndex;
+  if (
+    obsWebSocketServerPassword === null ||
+    obsWebSocketServerPassword === false ||
+    obsWebSocketServerPassword === ""
+  ) {
+    obsWebSocketServerPassword = undefined;
+  }
 
   obs.on("ConnectionOpened", () => {
     console.log("Connection Opened");
@@ -34,7 +40,7 @@ const obsSwitchScenes = (
         switchScene(scenesData, intervalInSeconds);
       })
       .catch((error) => {
-        console.error("Error on GetSceneList call:", error);
+        console.error("Error on GetSceneList call:", error.code, error.message);
       });
   });
 
@@ -46,6 +52,8 @@ const obsSwitchScenes = (
       console.error("Failed to connect", error.code, error.message);
     }
   );
+
+  let currentSceneIndex;
 
   const switchScene = (scenesData, intervalInSecs) => {
     setInterval(() => {
@@ -80,4 +88,4 @@ const obsSwitchScenes = (
   };
 };
 
-export default obsSwitchScenes;
+export default changeScene;

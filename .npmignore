@@ -1,6 +1,7 @@
 # Ignore development-related files and folders
 node_modules/
 test/
+examples/
 coverage/
 rollup.config.js
 package-lock.json

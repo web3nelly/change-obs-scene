@@ -8,18 +8,18 @@ const require = createRequire(import.meta.url);
 const { default: OBSWebSocket } = require("obs-websocket-js");
 
 export default {
-  input: "obs-switch-scenes.js",
+  input: "change-obs-scene.js",
   output: [
     {
-      file: "dist/obs-switch-scenes.cjs.js",
+      file: "dist/change-obs-scene.cjs.js",
       format: "cjs",
     },
     {
-      file: "dist/obs-switch-scenes.esm.js",
+      file: "dist/change-obs-scene.esm.js",
       format: "esm",
     },
     {
-      file: "dist/obs-switch-scenes.amd.js",
+      file: "dist/change-obs-scene.amd.js",
       format: "amd",
       amd: {
         id: "OBSWebSocket",

@@ -2,7 +2,6 @@
 node_modules/
 test/
 coverage/
-rollup.config.js
 package-lock.json
 
 # Ignore OS-related files

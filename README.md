@@ -1,12 +1,13 @@
 # change-obs-scene
 
-With just a few lines of code, automate changing your OBS scenes using the [@b3nelly/change-obs-scene](https://www.npmjs.com/package/@b3nelly/change-obs-scene?activeTab=readme) npm package.
+With just a few lines of code, automate changing your OBS scenes using the [@b3nelly/change-obs-scene](https://www.npmjs.com/package/@b3nelly/change-obs-scene?activeTab=readme) npm package. 💜
 
 ## Dependancies
 
 - [OBS](https://obsproject.com/)
 - [Node.js](https://nodejs.org/)
 - [NPM](https://www.npmjs.com/)
+- [obs-websocket-js](https://www.npmjs.com/package/obs-websocket-js)
 
 ## Installation
 
@@ -22,41 +23,49 @@ npm install @b3nelly/change-obs-scene
 
 - ![obs websocket server settings](https://github.com/b3nelly2/stream/blob/main/assets/obs-websocket-server-settings.png?raw=true)
 - Don't forget to set your _Server Password_
+- If you do not set a password, you do not need to pass the `obsWebSocketServerPassword` param to `changeScene()`
+
+### Simple Usage Example
+
+```js
+const changeScene = require("@b3nelly/change-obs-scene").default;
+const intervalInSeconds = 30; // 30 seconds per scene
+changeScene(intervalInSeconds); // it's that simple.
+```
 
 ### CommonJS (cjs) Usage Example
 
 ```js
-const obsSwitchScenes =
-  require("@b3nelly/change-obs-scene/dist/obs-switch-scenes.cjs.js").default;
+const changeScene = require("@b3nelly/change-obs-scene").default;
 
 const obsSkipScenes = [];
-const intervalInSeconds = 10;
-const obsWebSocketServerURL = "ws://localhost:4455";
+const intervalInSeconds = 30;
 const obsWebSocketServerPassword = "your-password-here";
+const obsWebSocketServerURL = "ws://localhost:4455";
 
-obsSwitchScenes(
+changeScene(
   intervalInSeconds,
+  obsSkipScenes,
+  obsWebSocketServerPassword
   obsWebSocketServerURL,
-  obsWebSocketServerPassword,
-  obsSkipScenes
 );
 ```
 
 ### ECMAScript Module (esm) Usage Example
 
 ```js
-import obsSwitchScenes from "@b3nelly/change-obs-scene/dist/obs-switch-scenes.esm.js";
+import changeScene from "@b3nelly/change-obs-scene";
 
 const obsSkipScenes = [];
 const intervalInSeconds = 30;
-const obsWebSocketServerURL = "ws://localhost:4455";
 const obsWebSocketServerPassword = "your-password-here";
+const obsWebSocketServerURL = "ws://localhost:4455";
 
-obsSwitchScenes(
+changeScene(
   intervalInSeconds,
+  obsSkipScenes,
+  obsWebSocketServerPassword
   obsWebSocketServerURL,
-  obsWebSocketServerPassword,
-  obsSkipScenes
 );
 ```
 
@@ -73,22 +82,22 @@ obsSwitchScenes(
     <script>
       require.config({
         paths: {
-          obsSwitchScenes:
+          changeScene:
             "@b3nelly/change-obs-scene/dist/obs-switch-scenes.amd",
         },
       });
 
-      require(["obsSwitchScenes"], function (obsSwitchScenes) {
+      require(["changeScene"], function (changeScene) {
         const obsSkipScenes = [];
         const intervalInSeconds = 90;
         const obsWebSocketServerURL = "ws://localhost:4455";
         const obsWebSocketServerPassword = "your-password-here";
 
-        obsSwitchScenes.default(
+        changeScene(
           intervalInSeconds,
+          obsSkipScenes,
+          obsWebSocketServerPassword
           obsWebSocketServerURL,
-          obsWebSocketServerPassword,
-          obsSkipScenes
         );
       });
     </script>
@@ -100,24 +109,38 @@ obsSwitchScenes(
 ## API
 
 ```js
-obsSwitchScenes(
+changeScene(
   intervalInSeconds,
+  obsSkipScenes,
+  obsWebSocketServerPassword
   obsWebSocketServerURL,
-  obsWebSocketServerPassword,
-  obsSkipScenes
 );
 ```
 
-- `intervalInSeconds` _(number, default: `60`)_: Number of seconds between each scene switch.
-- `obsWebSocketServerURL` _(string, default: 'ws_://localhost:4455'): OBS WebSocket Server URL or IP.
-- `obsWebSocketServerPassword` _(string, default: undefined)_: OBS WebSocket Server Password.
-- `obsSkipScenes` _(Array<string>, default: [])_: An array of scene names to skip when switching scenes (scene name must match).
+| Parameter                               |      Type       |         Default          | Description                                           |
+| --------------------------------------- | :-------------: | :----------------------: | ----------------------------------------------------- |
+| `intervalInSeconds` (optional)          |    `number`     |           `60`           | Number of seconds between each scene                  |
+| `obsSkipScenes` (optional)              | `Array<string>` |           `[]`           | An array of scene names to skip when switching scenes |
+| `obsWebSocketServerPassword` (optional) |    `string`     |       `undefined`        | OBS WebSocket Server Password                         |
+| `obsWebSocketServerURL` (optional)      |    `string`     | `"ws_://localhost:4455"` | OBS WebSocket Server URL / IP                         |
 
-## Test
+## CLI
 
 ```shell
-npm run test
+npm run cli
 ```
+
+You will be prompted to enter in the `changeSence()` params. Leave param blank to use default value.
+
+## Build
+
+```shell
+npm run build
+```
+
+Running the `build` command will automatically create the `dist/` dir and create/update the `cjs`, `esm`, and `amd` files inside.
+
+Configuration file [rollup.config.js](https://github.com/web3nelly/change-obs-scene/blob/275bf0d4d8e13b7ae7547e292f0d0997a192806b/rollup.config.js)
 
 ## Development Dependancies
 
