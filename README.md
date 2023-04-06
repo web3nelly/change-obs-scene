@@ -1,4 +1,4 @@
-# change-obs-scene
+# @b3nelly/change-obs-scene Node.js npm Package
 
 With just a few lines of code, automate changing your OBS scenes using the [@b3nelly/change-obs-scene](https://www.npmjs.com/package/@b3nelly/change-obs-scene?activeTab=readme) npm package. 💜
 
@@ -46,8 +46,8 @@ const obsWebSocketServerURL = "ws://localhost:4455";
 changeScene(
   intervalInSeconds,
   obsSkipScenes,
-  obsWebSocketServerPassword
-  obsWebSocketServerURL,
+  obsWebSocketServerPassword,
+  obsWebSocketServerURL
 );
 ```
 
@@ -64,8 +64,8 @@ const obsWebSocketServerURL = "ws://localhost:4455";
 changeScene(
   intervalInSeconds,
   obsSkipScenes,
-  obsWebSocketServerPassword
-  obsWebSocketServerURL,
+  obsWebSocketServerPassword,
+  obsWebSocketServerURL
 );
 ```
 
@@ -82,8 +82,7 @@ changeScene(
     <script>
       require.config({
         paths: {
-          changeScene:
-            "@b3nelly/change-obs-scene/dist/obs-switch-scenes.amd",
+          changeScene: "@b3nelly/change-obs-scene/dist/obs-switch-scenes.amd",
         },
       });
 
@@ -96,8 +95,8 @@ changeScene(
         changeScene(
           intervalInSeconds,
           obsSkipScenes,
-          obsWebSocketServerPassword
-          obsWebSocketServerURL,
+          obsWebSocketServerPassword,
+          obsWebSocketServerURL
         );
       });
     </script>
@@ -112,8 +111,8 @@ changeScene(
 changeScene(
   intervalInSeconds,
   obsSkipScenes,
-  obsWebSocketServerPassword
-  obsWebSocketServerURL,
+  obsWebSocketServerPassword,
+  obsWebSocketServerURL
 );
 ```
 
@@ -157,4 +156,4 @@ Configuration file [rollup.config.js](https://github.com/web3nelly/change-obs-sc
 
 ### MIT
 
-This `README.md` file provides installation and usage instructions, as well as a brief description of the API for the `change-obs-scene` package. Feel free to modify it as needed.
+This `README.md` file provides installation and usage instructions, as well as a brief description of the API for the [@b3nelly/change-obs-scene](https://www.npmjs.com/package/@b3nelly/change-obs-scene?activeTab=readme) package. Feel free to modify it as needed.
