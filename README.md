@@ -7,8 +7,6 @@ With just a few lines of code, automate changing your OBS scenes using the [@b3n
 - [OBS](https://obsproject.com/)
 - [Node.js](https://nodejs.org/)
 - [NPM](https://www.npmjs.com/)
-- [obs-websocket-js](https://www.npmjs.com/package/obs-websocket-js) for switching scenes in OBS.
-- [dotenv](https://www.npmjs.com/package/dotenv) for setting private evniermentt varibles.
 
 ## Installation
 
@@ -120,6 +118,17 @@ obsSwitchScenes(
 ```shell
 npm run test
 ```
+
+## Development Dependancies
+
+- [@babel/core](https://www.npmjs.com/package/@babel/core)
+- [@babel/preset-env](https://www.npmjs.com/package/@babel/preset-env)
+- [@rollup/plugin-babel](https://www.npmjs.com/package/@rollup/plugin-babel)
+- [@rollup/plugin-commonjs](https://www.npmjs.com/package/@rollup/plugin-commonjs)
+- [@rollup/plugin-json](https://www.npmjs.com/package/@rollup/plugin-json)
+- [@rollup/plugin-node-resolve](https://www.npmjs.com/package/@rollup/plugin-node-resolve)
+- [@rollup/plugin-terser](https://www.npmjs.com/package/@rollup/plugin-terser)
+- [rollup](https://www.npmjs.com/package/rollup)
 
 ## License
 
