@@ -23,9 +23,9 @@ const obsSwitchScenes =
   require("@b3nelly/change-obs-scene/dist/obs-switch-scenes.cjs.js").default;
 
 const obsSkipScenes = [];
-let intervalInSeconds = 10;
-let obsWebSocketServerURL = "ws://localhost:4455";
-let obsWebSocketServerPassword = "your-password-here";
+const intervalInSeconds = 10;
+const obsWebSocketServerURL = "ws://localhost:4455";
+const obsWebSocketServerPassword = "your-password-here";
 
 obsSwitchScenes(
   intervalInSeconds,
@@ -41,9 +41,9 @@ obsSwitchScenes(
 import obsSwitchScenes from "@b3nelly/change-obs-scene/dist/obs-switch-scenes.esm.js";
 
 const obsSkipScenes = [];
-let intervalInSeconds = 10;
-let obsWebSocketServerURL = "ws://localhost:4455";
-let obsWebSocketServerPassword = "your-password-here";
+const intervalInSeconds = 10;
+const obsWebSocketServerURL = "ws://localhost:4455";
+const obsWebSocketServerPassword = "your-password-here";
 
 obsSwitchScenes(
   intervalInSeconds,
@@ -73,9 +73,9 @@ obsSwitchScenes(
 
       require(["obsSwitchScenes"], function (obsSwitchScenes) {
         const obsSkipScenes = [];
-        let intervalInSeconds = 10;
-        let obsWebSocketServerURL = "ws://localhost:4455";
-        let obsWebSocketServerPassword = "your-password-here";
+        const intervalInSeconds = 10;
+        const obsWebSocketServerURL = "ws://localhost:4455";
+        const obsWebSocketServerPassword = "your-password-here";
 
         obsSwitchScenes.default(
           intervalInSeconds,
