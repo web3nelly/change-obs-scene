@@ -4,6 +4,10 @@ test/
 coverage/
 package-lock.json
 
+# Ignore npm files
+.npm*
+.npmignore
+
 # Ignore OS-related files
 .DS_Store
 Thumbs.db

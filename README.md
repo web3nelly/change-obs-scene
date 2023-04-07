@@ -1,4 +1,4 @@
-# @b3nelly/change-obs-scene Node.js npm Package
+# `@b3nelly/change-obs-scene` Node.js npm Package
 
 With just a few lines of code, automate changing your OBS scenes using the [@b3nelly/change-obs-scene](https://www.npmjs.com/package/@b3nelly/change-obs-scene?activeTab=readme) npm package. 💜
 
@@ -21,7 +21,7 @@ npm install @b3nelly/change-obs-scene
 
 `Tools > WebSocket Server Settings`:
 
-- ![obs websocket server settings](https://github.com/b3nelly2/stream/blob/main/assets/obs-websocket-server-settings.png?raw=true)
+- ![obs websocket server settings image](https://github.com/web3nelly/obs-stream-automation/blob/main/assets/obs-websocket-server-settings.png?raw=true)
 - Don't forget to set your _Server Password_
 - If you do not set a password, you do not need to pass the `obsWebSocketServerPassword` param to `changeScene()`
 
@@ -59,14 +59,8 @@ import changeScene from "@b3nelly/change-obs-scene";
 const obsSkipScenes = [];
 const intervalInSeconds = 30;
 const obsWebSocketServerPassword = "your-password-here";
-const obsWebSocketServerURL = "ws://localhost:4455";
 
-changeScene(
-  intervalInSeconds,
-  obsSkipScenes,
-  obsWebSocketServerPassword,
-  obsWebSocketServerURL
-);
+changeScene(intervalInSeconds, obsSkipScenes, obsWebSocketServerPassword);
 ```
 
 ### Asynchronous Module Definition (amd) Usage Example
@@ -82,21 +76,19 @@ changeScene(
     <script>
       require.config({
         paths: {
-          changeScene: "@b3nelly/change-obs-scene/dist/obs-switch-scenes.amd",
+          changeScene: "@b3nelly/change-obs-scene/dist/change-obs-scene.amd",
         },
       });
 
       require(["changeScene"], function (changeScene) {
         const obsSkipScenes = [];
         const intervalInSeconds = 90;
-        const obsWebSocketServerURL = "ws://localhost:4455";
         const obsWebSocketServerPassword = "your-password-here";
 
         changeScene(
           intervalInSeconds,
           obsSkipScenes,
-          obsWebSocketServerPassword,
-          obsWebSocketServerURL
+          obsWebSocketServerPassword
         );
       });
     </script>
@@ -117,11 +109,15 @@ changeScene(
 ```
 
 | Parameter                               |      Type       |         Default          | Description                                           |
-| --------------------------------------- | :-------------: | :----------------------: | ----------------------------------------------------- |
+| :-------------------------------------- | :-------------: | :----------------------: | ----------------------------------------------------- |
 | `intervalInSeconds` (optional)          |    `number`     |           `60`           | Number of seconds between each scene                  |
 | `obsSkipScenes` (optional)              | `Array<string>` |           `[]`           | An array of scene names to skip when switching scenes |
 | `obsWebSocketServerPassword` (optional) |    `string`     |       `undefined`        | OBS WebSocket Server Password                         |
 | `obsWebSocketServerURL` (optional)      |    `string`     | `"ws_://localhost:4455"` | OBS WebSocket Server URL / IP                         |
+
+## `change-obs-scene` In Action
+
+![Working change obs scene example image](https://github.com/web3nelly/obs-stream-automation/blob/main/assets/change-obs-scene.png?raw=true)
 
 ## CLI
 
